@@ -1,0 +1,29 @@
+Job ID: 223
+Nodes: worker-[0-1]
+MASTER_ADDR=worker-0
+MASTER_PORT=29500
+WORLD_SIZE=4
+host=worker-1
+RANK=2
+LOCAL_RANK=0
+WORLD_SIZE=4
+CUDA_VISIBLE_DEVICES=0,1
+rank=2 local_rank=0 device=NVIDIA H200 all_reduce=10.0 expected=10.0
+host=worker-0
+RANK=1
+LOCAL_RANK=1
+WORLD_SIZE=4
+CUDA_VISIBLE_DEVICES=0,1
+rank=1 local_rank=1 device=NVIDIA H200 all_reduce=10.0 expected=10.0
+host=worker-1
+RANK=3
+LOCAL_RANK=1
+WORLD_SIZE=4
+CUDA_VISIBLE_DEVICES=0,1
+rank=3 local_rank=1 device=NVIDIA H200 all_reduce=10.0 expected=10.0
+host=worker-0
+RANK=0
+LOCAL_RANK=0
+WORLD_SIZE=4
+CUDA_VISIBLE_DEVICES=0,1
+rank=0 local_rank=0 device=NVIDIA H200 all_reduce=10.0 expected=10.0

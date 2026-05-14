@@ -1,0 +1,69 @@
+Job ID: 125
+Nodes: worker-[0-1]
+pyxis: created lock file /var/cache/enroot-container-images/1004/nvcr.io/nvidia/pytorch:24.12-py3.lock
+pyxis: found existing lock file /var/cache/enroot-container-images/1004/nvcr.io/nvidia/pytorch:24.12-py3.lock
+pyxis: imported docker image: nvcr.io/nvidia/pytorch:24.12-py3
+Host: worker-0
+CUDA_VISIBLE_DEVICES=0,1
+Fri May  8 23:22:58 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.211.01             Driver Version: 570.211.01     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:8D:00.0 Off |                    0 |
+| N/A   28C    P0             77W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:91:00.0 Off |                    0 |
+| N/A   27C    P0             78W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Host: worker-1
+CUDA_VISIBLE_DEVICES=0,1
+Fri May  8 23:22:59 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.211.01             Driver Version: 570.211.01     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200                    On  |   00000000:8D:00.0 Off |                    0 |
+| N/A   26C    P0             74W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200                    On  |   00000000:91:00.0 Off |                    0 |
+| N/A   25C    P0             75W /  700W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+torch: 2.6.0a0+df5bbc09d1.nv24.12
+cuda_available: True
+cuda_version: 12.6
+gpu_count: 2
+0 NVIDIA H200
+1 NVIDIA H200
+torch: 2.6.0a0+df5bbc09d1.nv24.12
+cuda_available: True
+cuda_version: 12.6
+gpu_count: 2
+0 NVIDIA H200
+1 NVIDIA H200

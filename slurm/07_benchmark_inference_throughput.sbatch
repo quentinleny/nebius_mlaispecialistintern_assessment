@@ -1,0 +1,40 @@
+#!/bin/bash
+# 07_benchmark_inference_throughput.sbatch
+
+#SBATCH --job-name=bench_infer
+#SBATCH -N 1
+#SBATCH --partition=earlytalent
+#SBATCH --gres=gpu:1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=80G
+#SBATCH --time=00:30:00
+#SBATCH --output=logs/benchmark_inference_throughput_%j.out
+
+echo "Job ID: $SLURM_JOB_ID"
+echo "Host: $(hostname)"
+
+srun \
+  --container-image=nvcr.io/nvidia/pytorch:24.12-py3 \
+  --container-mount-home \
+  bash -lc '
+    set -e
+
+    export PYTHONUSERBASE=/home/qln/nebius-poc/hf_home
+    export PATH=$PYTHONUSERBASE/bin:$PATH
+    export PYTHONPATH=$PYTHONUSERBASE/lib/python3.12/site-packages:$PYTHONPATH
+    export HF_HOME=/home/qln/nebius-poc/hf_cache
+    export HF_DATASETS_CACHE=/home/qln/nebius-poc/hf_cache/datasets
+
+    python /home/qln/nebius-poc/scripts/benchmark_inference_throughput.py \
+      --model_name Qwen/Qwen2.5-0.5B-Instruct \
+      --adapter_dir /home/qln/nebius-poc/results/qwen_0p5b_lora_lr5e5_dropout005_seed36 \
+      --category high_school_statistics \
+      --split test \
+      --start_index 160 \
+      --end_index 216 \
+      --batch_sizes 1,2,4,8,16,32,48,55,56,64,96 \
+      --repeats 20 \
+      --warmup 3 \
+      --output_csv /home/qln/nebius-poc/results/inference_throughput_benchmark.csv
+  '

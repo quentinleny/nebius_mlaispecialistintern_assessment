@@ -1,0 +1,176 @@
+Job ID: 298
+Nodes: worker-[0-1]
+MASTER_ADDR=worker-0
+MASTER_PORT=29501
+Environment
+host: worker-0
+python_userbase: /home/qln/nebius-poc/hf_home
+model_name: Qwen/Qwen2.5-0.5B-Instruct
+category: high_school_statistics
+output_dir: /home/qln/nebius-poc/results/qwen_0p5b_lora_lr5e5_dropout005_seed36_multinode
+seed: 36
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+learning_rate: 5e-05
+num_train_epochs: 12.0
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 1
+train_test_examples: 160
+torch: 2.6.0a0+df5bbc09d1.nv24.12
+cuda_available: True
+gpu_count: 2
+gpu_0: NVIDIA H200
+formatted_training_example:
+Answer the following multiple choice question. Return only the letter A, B, C, or D.
+
+Question: Which of the following is a correct statement about correlation?
+
+A. If the slope of the regression line is exactly 1, then the correlation is exactly 1.
+B. If the correlation is 0, then the slope of the regression line is undefined.
+C. Switching which variable is called x and which is called y changes the sign of the correlation.
+D. The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.
+
+Answer: D
+formatted_training_example:
+Answer the following multiple choice question. Return only the letter A, B, C, or D.
+
+Question: Which of the following is a correct statement about correlation?
+
+A. If the slope of the regression line is exactly 1, then the correlation is exactly 1.
+B. If the correlation is 0, then the slope of the regression line is undefined.
+C. Switching which variable is called x and which is called y changes the sign of the correlation.
+D. The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.
+
+Answer: D
+Dataset
+DatasetDict({
+    test: Dataset({
+        features: ['question', 'subject', 'choices', 'answer'],
+        num_rows: 216
+    })
+    validation: Dataset({
+        features: ['question', 'subject', 'choices', 'answer'],
+        num_rows: 23
+    })
+    dev: Dataset({
+        features: ['question', 'subject', 'choices', 'answer'],
+        num_rows: 5
+    })
+})
+dev_examples: 5
+validation_examples: 23
+test_examples_used_for_training: 160
+total_train_examples: 188
+heldout_test_start: 160
+heldout_test_end: 216
+heldout_test_examples: 56
+formatted_training_example:
+Answer the following multiple choice question. Return only the letter A, B, C, or D.
+
+Question: Which of the following is a correct statement about correlation?
+
+A. If the slope of the regression line is exactly 1, then the correlation is exactly 1.
+B. If the correlation is 0, then the slope of the regression line is undefined.
+C. Switching which variable is called x and which is called y changes the sign of the correlation.
+D. The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.
+
+Answer: D
+formatted_training_example:
+Answer the following multiple choice question. Return only the letter A, B, C, or D.
+
+Question: Which of the following is a correct statement about correlation?
+
+A. If the slope of the regression line is exactly 1, then the correlation is exactly 1.
+B. If the correlation is 0, then the slope of the regression line is undefined.
+C. Switching which variable is called x and which is called y changes the sign of the correlation.
+D. The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.
+
+Answer: D
+formatted_training_example:
+Answer the following multiple choice question. Return only the letter A, B, C, or D.
+
+Question: Which of the following is a correct statement about correlation?
+
+A. If the slope of the regression line is exactly 1, then the correlation is exactly 1.
+B. If the correlation is 0, then the slope of the regression line is undefined.
+C. Switching which variable is called x and which is called y changes the sign of the correlation.
+D. The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.
+
+Answer: D
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+tokenized_train_examples: 188
+Starting training
+loss=12.2022 | grad_norm=45.304 | lr=4.91e-05 | epoch=0.21
+loss=8.9684 | grad_norm=41.342 | lr=4.83e-05 | epoch=0.42
+loss=6.8337 | grad_norm=43.757 | lr=4.74e-05 | epoch=0.62
+loss=4.9676 | grad_norm=38.308 | lr=4.65e-05 | epoch=0.83
+loss=3.0538 | grad_norm=25.776 | lr=4.57e-05 | epoch=1.04
+loss=1.5062 | grad_norm=17.955 | lr=4.48e-05 | epoch=1.25
+loss=0.7778 | grad_norm=14.101 | lr=4.39e-05 | epoch=1.46
+loss=0.7286 | grad_norm=12.290 | lr=4.31e-05 | epoch=1.67
+loss=0.5579 | grad_norm=9.553 | lr=4.22e-05 | epoch=1.88
+loss=0.5062 | grad_norm=7.429 | lr=4.13e-05 | epoch=2.08
+loss=0.6252 | grad_norm=7.848 | lr=4.05e-05 | epoch=2.29
+loss=0.5119 | grad_norm=6.174 | lr=3.96e-05 | epoch=2.50
+loss=0.7408 | grad_norm=10.865 | lr=3.87e-05 | epoch=2.71
+loss=0.5723 | grad_norm=4.721 | lr=3.78e-05 | epoch=2.92
+loss=0.6265 | grad_norm=8.986 | lr=3.70e-05 | epoch=3.12
+loss=0.5266 | grad_norm=5.064 | lr=3.61e-05 | epoch=3.33
+loss=0.5123 | grad_norm=6.968 | lr=3.52e-05 | epoch=3.54
+loss=0.5287 | grad_norm=7.665 | lr=3.44e-05 | epoch=3.75
+loss=0.6183 | grad_norm=7.792 | lr=3.35e-05 | epoch=3.96
+loss=0.4987 | grad_norm=5.655 | lr=3.26e-05 | epoch=4.17
+loss=0.4934 | grad_norm=6.047 | lr=3.18e-05 | epoch=4.38
+loss=0.5730 | grad_norm=10.060 | lr=3.09e-05 | epoch=4.58
+loss=0.5100 | grad_norm=9.969 | lr=3.00e-05 | epoch=4.79
+loss=0.5194 | grad_norm=7.226 | lr=2.92e-05 | epoch=5.00
+loss=0.4953 | grad_norm=6.219 | lr=2.83e-05 | epoch=5.21
+loss=0.4413 | grad_norm=5.614 | lr=2.74e-05 | epoch=5.42
+loss=0.5186 | grad_norm=8.866 | lr=2.66e-05 | epoch=5.62
+loss=0.4691 | grad_norm=11.905 | lr=2.57e-05 | epoch=5.83
+loss=0.4615 | grad_norm=6.131 | lr=2.48e-05 | epoch=6.04
+loss=0.4319 | grad_norm=10.179 | lr=2.40e-05 | epoch=6.25
+loss=0.4360 | grad_norm=10.110 | lr=2.31e-05 | epoch=6.46
+loss=0.5245 | grad_norm=9.109 | lr=2.22e-05 | epoch=6.67
+loss=0.4509 | grad_norm=8.396 | lr=2.14e-05 | epoch=6.88
+loss=0.4311 | grad_norm=12.930 | lr=2.05e-05 | epoch=7.08
+loss=0.4394 | grad_norm=14.924 | lr=1.96e-05 | epoch=7.29
+loss=0.3521 | grad_norm=7.752 | lr=1.88e-05 | epoch=7.50
+loss=0.3071 | grad_norm=8.011 | lr=1.79e-05 | epoch=7.71
+loss=0.3964 | grad_norm=23.728 | lr=1.70e-05 | epoch=7.92
+loss=0.4293 | grad_norm=9.063 | lr=1.61e-05 | epoch=8.12
+loss=0.3296 | grad_norm=16.436 | lr=1.53e-05 | epoch=8.33
+loss=0.3795 | grad_norm=22.056 | lr=1.44e-05 | epoch=8.54
+loss=0.3606 | grad_norm=17.526 | lr=1.35e-05 | epoch=8.75
+loss=0.3845 | grad_norm=28.930 | lr=1.27e-05 | epoch=8.96
+loss=0.3531 | grad_norm=24.480 | lr=1.18e-05 | epoch=9.17
+loss=0.3265 | grad_norm=14.805 | lr=1.09e-05 | epoch=9.38
+loss=0.3031 | grad_norm=18.803 | lr=1.01e-05 | epoch=9.58
+loss=0.3684 | grad_norm=26.930 | lr=9.20e-06 | epoch=9.79
+loss=0.3835 | grad_norm=18.657 | lr=8.33e-06 | epoch=10.00
+loss=0.3069 | grad_norm=10.341 | lr=7.47e-06 | epoch=10.21
+loss=0.2798 | grad_norm=26.788 | lr=6.60e-06 | epoch=10.42
+loss=0.2934 | grad_norm=14.534 | lr=5.73e-06 | epoch=10.62
+loss=0.3402 | grad_norm=18.679 | lr=4.86e-06 | epoch=10.83
+loss=0.3473 | grad_norm=9.937 | lr=3.99e-06 | epoch=11.04
+loss=0.2333 | grad_norm=15.399 | lr=3.13e-06 | epoch=11.25
+loss=0.2337 | grad_norm=16.325 | lr=2.26e-06 | epoch=11.46
+loss=0.3195 | grad_norm=14.799 | lr=1.39e-06 | epoch=11.67
+loss=0.3627 | grad_norm=17.739 | lr=5.21e-07 | epoch=11.88
+epoch=12.00 | runtime_s=21.22 | samples_per_s=106.31 | steps_per_s=13.57 | train_loss=1.0528
+training_max_gpu_memory_allocated_gb: 5.035
+training_max_gpu_memory_reserved_gb: 6.045
+final_training_summary:
+total_runtime_s: 21.22
+train_samples_per_s: 106.31
+train_steps_per_s: 13.57
+mean_train_loss: 1.0528
+epochs_completed: 12.00
+total_flos: 8.520e+14
+Saving LoRA adapter
+[rank2]:[W514 00:53:52.302406959 ProcessGroupNCCL.cpp:1294] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
+saved_adapter: /home/qln/nebius-poc/results/qwen_0p5b_lora_lr5e5_dropout005_seed36_multinode
+train_wall_seconds: 22.06
+LoRA training complete.
+[rank0]:[W514 00:53:53.772103109 ProcessGroupNCCL.cpp:1294] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

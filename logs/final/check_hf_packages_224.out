@@ -1,0 +1,17 @@
+Job ID: 224
+Host: worker-0
+Python:
+Python 3.12.3
+Torch:
+2.6.0a0+df5bbc09d1.nv24.12
+cuda_available: True
+cuda_version: 12.6
+gpu: NVIDIA H200
+Package availability:
+transformers MISSING ModuleNotFoundError("No module named 'transformers'")
+datasets MISSING ModuleNotFoundError("No module named 'datasets'")
+accelerate MISSING ModuleNotFoundError("No module named 'accelerate'")
+peft MISSING ModuleNotFoundError("No module named 'peft'")
+evaluate MISSING ModuleNotFoundError("No module named 'evaluate'")
+sentencepiece MISSING ModuleNotFoundError("No module named 'sentencepiece'")
+bitsandbytes MISSING ModuleNotFoundError("No module named 'bitsandbytes'")

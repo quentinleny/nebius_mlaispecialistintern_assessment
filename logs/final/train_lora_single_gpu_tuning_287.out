@@ -1,0 +1,119 @@
+Job ID: 287
+Host: worker-0
+Environment
+host: worker-0
+python_userbase: /home/qln/nebius-poc/hf_home
+model_name: Qwen/Qwen2.5-0.5B-Instruct
+category: high_school_statistics
+output_dir: /home/qln/nebius-poc/results/qwen_0p5b_lora_lr5e5_dropout005_seed36_epoch10
+seed: 36
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+learning_rate: 5e-05
+num_train_epochs: 10.0
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 4
+train_test_examples: 160
+torch: 2.6.0a0+df5bbc09d1.nv24.12
+cuda_available: True
+gpu_count: 1
+gpu_0: NVIDIA H200
+Dataset
+DatasetDict({
+    test: Dataset({
+        features: ['question', 'subject', 'choices', 'answer'],
+        num_rows: 216
+    })
+    validation: Dataset({
+        features: ['question', 'subject', 'choices', 'answer'],
+        num_rows: 23
+    })
+    dev: Dataset({
+        features: ['question', 'subject', 'choices', 'answer'],
+        num_rows: 5
+    })
+})
+dev_examples: 5
+validation_examples: 23
+test_examples_used_for_training: 160
+total_train_examples: 188
+heldout_test_start: 160
+heldout_test_end: 216
+heldout_test_examples: 56
+formatted_training_example:
+Answer the following multiple choice question. Return only the letter A, B, C, or D.
+
+Question: Which of the following is a correct statement about correlation?
+
+A. If the slope of the regression line is exactly 1, then the correlation is exactly 1.
+B. If the correlation is 0, then the slope of the regression line is undefined.
+C. Switching which variable is called x and which is called y changes the sign of the correlation.
+D. The correlation r is equal to the slope of the regression line when z-scores for the y-variable are plotted against z-scores for the x-variable.
+
+Answer: D
+trainable params: 1,081,344 || all params: 495,114,112 || trainable%: 0.2184
+Map:   0%|          | 0/188 [00:00<?, ? examples/s]Map:  93%|█████████▎| 174/188 [00:00<00:00, 1713.89 examples/s]Map: 100%|██████████| 188/188 [00:00<00:00, 1543.03 examples/s]
+tokenized_train_examples: 188
+Starting training
+loss=12.2004 | grad_norm=45.262 | lr=4.89e-05 | epoch=0.21
+loss=8.9740 | grad_norm=41.248 | lr=4.78e-05 | epoch=0.43
+loss=6.8450 | grad_norm=43.324 | lr=4.67e-05 | epoch=0.64
+loss=5.0093 | grad_norm=37.827 | lr=4.57e-05 | epoch=0.85
+loss=3.4067 | grad_norm=28.069 | lr=4.46e-05 | epoch=1.06
+loss=1.5936 | grad_norm=15.193 | lr=4.35e-05 | epoch=1.28
+loss=0.8614 | grad_norm=16.959 | lr=4.24e-05 | epoch=1.49
+loss=0.6717 | grad_norm=8.623 | lr=4.13e-05 | epoch=1.70
+loss=0.5752 | grad_norm=5.727 | lr=4.02e-05 | epoch=1.91
+loss=0.6208 | grad_norm=9.668 | lr=3.91e-05 | epoch=2.13
+loss=0.5638 | grad_norm=7.062 | lr=3.80e-05 | epoch=2.34
+loss=0.5693 | grad_norm=8.396 | lr=3.70e-05 | epoch=2.55
+loss=0.7390 | grad_norm=9.901 | lr=3.59e-05 | epoch=2.77
+loss=0.5471 | grad_norm=9.899 | lr=3.48e-05 | epoch=2.98
+loss=0.7178 | grad_norm=7.686 | lr=3.37e-05 | epoch=3.19
+loss=0.5148 | grad_norm=4.656 | lr=3.26e-05 | epoch=3.40
+loss=0.5697 | grad_norm=8.936 | lr=3.15e-05 | epoch=3.62
+loss=0.5179 | grad_norm=4.925 | lr=3.04e-05 | epoch=3.83
+loss=0.6917 | grad_norm=5.730 | lr=2.93e-05 | epoch=4.04
+loss=0.5040 | grad_norm=6.119 | lr=2.83e-05 | epoch=4.26
+loss=0.5179 | grad_norm=5.839 | lr=2.72e-05 | epoch=4.47
+loss=0.5167 | grad_norm=7.956 | lr=2.61e-05 | epoch=4.68
+loss=0.6321 | grad_norm=9.254 | lr=2.50e-05 | epoch=4.89
+loss=0.5888 | grad_norm=8.340 | lr=2.39e-05 | epoch=5.11
+loss=0.4728 | grad_norm=6.250 | lr=2.28e-05 | epoch=5.32
+loss=0.5052 | grad_norm=8.396 | lr=2.17e-05 | epoch=5.53
+loss=0.5106 | grad_norm=9.048 | lr=2.07e-05 | epoch=5.74
+loss=0.4757 | grad_norm=10.634 | lr=1.96e-05 | epoch=5.96
+loss=0.4863 | grad_norm=9.651 | lr=1.85e-05 | epoch=6.17
+loss=0.4093 | grad_norm=12.630 | lr=1.74e-05 | epoch=6.38
+loss=0.5481 | grad_norm=14.978 | lr=1.63e-05 | epoch=6.60
+loss=0.4792 | grad_norm=7.629 | lr=1.52e-05 | epoch=6.81
+loss=0.4474 | grad_norm=10.665 | lr=1.41e-05 | epoch=7.02
+loss=0.4180 | grad_norm=6.227 | lr=1.30e-05 | epoch=7.23
+loss=0.4566 | grad_norm=6.263 | lr=1.20e-05 | epoch=7.45
+loss=0.4064 | grad_norm=11.730 | lr=1.09e-05 | epoch=7.66
+loss=0.3649 | grad_norm=11.875 | lr=9.78e-06 | epoch=7.87
+loss=0.6131 | grad_norm=13.847 | lr=8.70e-06 | epoch=8.09
+loss=0.4118 | grad_norm=10.297 | lr=7.61e-06 | epoch=8.30
+loss=0.4136 | grad_norm=11.308 | lr=6.52e-06 | epoch=8.51
+loss=0.4071 | grad_norm=12.826 | lr=5.43e-06 | epoch=8.72
+loss=0.4396 | grad_norm=14.486 | lr=4.35e-06 | epoch=8.94
+loss=0.4734 | grad_norm=15.051 | lr=3.26e-06 | epoch=9.15
+loss=0.3676 | grad_norm=14.803 | lr=2.17e-06 | epoch=9.36
+loss=0.3541 | grad_norm=11.664 | lr=1.09e-06 | epoch=9.57
+loss=0.4654 | grad_norm=9.113 | lr=0.00e+00 | epoch=9.79
+epoch=9.79 | runtime_s=61.25 | samples_per_s=30.69 | steps_per_s=3.75 | train_loss=1.2799
+training_max_gpu_memory_allocated_gb: 5.039
+training_max_gpu_memory_reserved_gb: 7.324
+final_training_summary:
+total_runtime_s: 61.25
+train_samples_per_s: 30.69
+train_steps_per_s: 3.75
+mean_train_loss: 1.2799
+epochs_completed: 9.79
+total_flos: 6.796e+14
+Saving LoRA adapter
+saved_adapter: /home/qln/nebius-poc/results/qwen_0p5b_lora_lr5e5_dropout005_seed36_epoch10
+train_wall_seconds: 61.72
+LoRA training complete.
+[rank0]:[W514 00:16:58.320085660 ProcessGroupNCCL.cpp:1294] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())

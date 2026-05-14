@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Logs / Slurm output
+logs/*
+!logs/final/
+!logs/final/*.out
+*.out
+!logs/final/*.out
+*.err
+slurm-*.out
+
+# Large generated artifacts / model outputs
+results/qwen_*/
+results/*adapter*/
+results/*.bin
+results/*.safetensors
+results/checkpoint*/
+checkpoint*/
+
+# Hugging Face caches / local installs
+hf_home/
+hf_cache/
+.cache/
+models/
+datasets/
+*.arrow
+
+# Temp / secrets
+tmp/
+temp/
+*.tmp
+.env
+.env.*
+*.pem
+*.key

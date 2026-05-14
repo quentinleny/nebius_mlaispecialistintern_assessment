@@ -1,0 +1,28 @@
+Job ID: 299
+Host: worker-0
+Environment
+host: worker-0
+python_userbase: /home/qln/nebius-poc/hf_home
+model_name: Qwen/Qwen2.5-0.5B-Instruct
+adapter_dir: /home/qln/nebius-poc/results/qwen_0p5b_lora_lr5e5_dropout005_seed36_multinode
+category: high_school_statistics
+split: test
+torch: 2.6.0a0+df5bbc09d1.nv24.12
+cuda_available: True
+gpu_count: 1
+gpu_0: NVIDIA H200
+loading_adapter: /home/qln/nebius-poc/results/qwen_0p5b_lora_lr5e5_dropout005_seed36_multinode
+choice_token_ids: {'A': 362, 'B': 425, 'C': 356, 'D': 422}
+start_index: 160
+end_index: 216
+num_examples: 56
+example=0 pred=D answer=D correct=1
+example=1 pred=A answer=C correct=0
+example=2 pred=D answer=B correct=0
+example=3 pred=D answer=B correct=0
+example=4 pred=D answer=D correct=1
+correct: 31
+total: 56
+accuracy: 0.5536
+saved_results: /home/qln/nebius-poc/results/finetuned_model_mmlu_heldout_accuracy_lr5e5_dropout005_seed36_multinode.csv
+MMLU evaluation complete.

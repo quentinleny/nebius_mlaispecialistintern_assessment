@@ -1,0 +1,26 @@
+Job ID: 293
+Host: worker-0
+Environment
+host: worker-0
+model_name: Qwen/Qwen2.5-0.5B-Instruct
+adapter_dir: /home/qln/nebius-poc/results/qwen_0p5b_lora_lr5e5_dropout005_seed36
+category: high_school_statistics
+heldout: test[160:216]
+torch: 2.6.0a0+df5bbc09d1.nv24.12
+cuda_available: True
+gpu_count: 1
+gpu_0: NVIDIA H200
+choice_token_ids: {'A': 362, 'B': 425, 'C': 356, 'D': 422}
+batch_size=1 | examples_per_s=25.00 | runtime_s=44.81 | max_allocated_gb=1.039 | max_reserved_gb=1.166
+batch_size=2 | examples_per_s=50.09 | runtime_s=22.36 | max_allocated_gb=1.115 | max_reserved_gb=1.502
+batch_size=4 | examples_per_s=86.69 | runtime_s=12.92 | max_allocated_gb=1.266 | max_reserved_gb=1.982
+batch_size=8 | examples_per_s=176.67 | runtime_s=6.34 | max_allocated_gb=1.571 | max_reserved_gb=2.947
+batch_size=16 | examples_per_s=397.95 | runtime_s=2.81 | max_allocated_gb=2.177 | max_reserved_gb=4.131
+batch_size=32 | examples_per_s=566.37 | runtime_s=1.98 | max_allocated_gb=3.389 | max_reserved_gb=6.449
+batch_size=48 | examples_per_s=689.50 | runtime_s=1.62 | max_allocated_gb=4.609 | max_reserved_gb=9.928
+batch_size=55 | examples_per_s=656.50 | runtime_s=1.71 | max_allocated_gb=5.133 | max_reserved_gb=13.914
+batch_size=56 | examples_per_s=843.19 | runtime_s=1.33 | max_allocated_gb=5.209 | max_reserved_gb=17.973
+batch_size=64 | examples_per_s=839.89 | runtime_s=1.33 | max_allocated_gb=5.209 | max_reserved_gb=17.973
+batch_size=96 | examples_per_s=838.98 | runtime_s=1.33 | max_allocated_gb=5.209 | max_reserved_gb=17.973
+saved_results: /home/qln/nebius-poc/results/inference_throughput_benchmark.csv
+Inference throughput benchmark complete.
