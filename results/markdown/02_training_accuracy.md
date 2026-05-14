@@ -1,5 +1,6 @@
 # Training and Accuracy Results
 
+
 ## Fine-Tuning Method
 
 LoRA was used instead of full fine-tuning to reduce memory and compute cost while still adapting the model to the selected MMLU category.
@@ -9,7 +10,8 @@ LoRA freezes the base model weights and trains low-rank adapter updates:
     W = W0 + Delta_W
     Delta_W = (alpha / r) * B * A
 
-Only the adapter matrices are trained; the base model weights remain frozen.
+Only the adapter matrices are trained. The base model weights remain frozen.
+
 
 ## Final LoRA Configuration
 
@@ -31,6 +33,7 @@ Source log: `logs/train_lora_single_gpu_tuning_283.out`
 | Effective batch size | 8 |
 | Training examples | 188 |
 
+
 ## Parameter Efficiency
 
 | Metric | Value |
@@ -40,6 +43,7 @@ Source log: `logs/train_lora_single_gpu_tuning_283.out`
 | Trainable percentage | 0.2184% |
 
 This confirms the model was adapted by training less than 1% of total parameters.
+
 
 ## Single-GPU Training Metrics
 
@@ -53,6 +57,7 @@ This confirms the model was adapted by training less than 1% of total parameters
 | Max GPU memory allocated | 5.039 GB |
 | Max GPU memory reserved | 7.324 GB |
 | Total FLOPs | `8.157e14` |
+
 
 ## Accuracy Comparison
 
@@ -68,6 +73,7 @@ Source logs:
 | Base model | none | 22 | 56 | 39.29% |
 | Fine-tuned model | `qwen_0p5b_lora_lr5e5_dropout005_seed36` | 31 | 56 | 55.36% |
 
+
 ## Accuracy Improvement
 
 | Metric | Value |
@@ -77,9 +83,11 @@ Source logs:
 
 The fine-tuned adapter improved heldout accuracy from 39.29% to 55.36%.
 
+
 ## Hyperparameter Selection
 
 Several configurations were tested across learning rate, LoRA rank, dropout, random seed, and epoch count.
+
 
 Selected run:
 
@@ -92,6 +100,7 @@ Selected run:
 | Seed | 36 |
 | Epochs | 12 |
 
+
 Key observations:
 
 | Observation | Interpretation |
@@ -100,6 +109,7 @@ Key observations:
 | alpha=16 with r=8 gave scaling 2 | Adapter update was not vanishingly small |
 | 16 epochs lowered train loss but reduced heldout accuracy | Longer training overfit |
 | Final model chosen by heldout accuracy | Not by lowest training loss |
+
 
 ## Multi-Node Training
 
@@ -117,6 +127,7 @@ The multi-node run used the same model, data split, LoRA configuration, seed, le
 | Effective global batch size | 8 |
 | Epochs | 12 |
 
+
 ## Single-GPU vs Multi-Node Training
 
 | Metric | Single GPU | Multi-node |
@@ -132,6 +143,7 @@ The multi-node run used the same model, data split, LoRA configuration, seed, le
 |---|---:|
 | Training throughput speedup | 3.47x |
 | Scaling efficiency across 4 GPU processes | 86.8% |
+
 
 ## Interpretation
 

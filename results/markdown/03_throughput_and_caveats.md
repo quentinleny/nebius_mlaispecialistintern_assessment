@@ -1,5 +1,6 @@
 # Throughput Results and Caveats
 
+
 ## Inference Throughput Optimization
 
 Inference throughput was selected as the formal performance metric because it directly measures serving efficiency for the fine-tuned model.
@@ -93,4 +94,4 @@ Batching improved inference throughput by 33.73x while keeping memory usage well
 - Accuracy improved from 39.29% to 55.36% on the heldout split.
 - Multi-node training achieved 3.47x training throughput speedup across 4 GPU processes.
 - Inference batching improved throughput from 25.00 to 843.19 examples/sec.
-- The final configuration prioritized reproducibility, measurable accuracy improvement, and clear serving-performance gains.
+- The final configuration prioritized reproducibility and measurable accuracy improvement, with clear serving-performance gains.

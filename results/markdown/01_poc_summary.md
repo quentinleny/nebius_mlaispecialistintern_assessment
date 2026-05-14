@@ -1,5 +1,6 @@
 # Nebius PoC Summary
 
+
 ## Objective
 
 This PoC validates a Slurm-based GPU workflow for fine-tuning and serving an open-source LLM on Nebius-style infrastructure.
@@ -11,6 +12,7 @@ The workflow covers:
 - LoRA fine-tuning of an open-source LLM
 - Accuracy comparison against the base model
 - Inference throughput optimization
+
 
 ## Environment
 
@@ -27,6 +29,7 @@ The workflow covers:
 | PyTorch | `2.6.0a0+df5bbc09d1.nv24.12` |
 | CUDA available in PyTorch | Yes |
 
+
 ## Cluster Validation
 
 Before model training, the cluster was validated with three checks.
@@ -42,6 +45,7 @@ Before model training, the cluster was validated with three checks.
 
 The validation confirmed that the containerized environment could access GPUs and run distributed communication across 2 nodes.
 
+
 ## Model and Dataset
 
 | Item | Value |
@@ -52,6 +56,7 @@ The validation confirmed that the containerized environment could access GPUs an
 | Task | Multiple-choice answer selection |
 | Fine-tuning method | LoRA |
 | Final adapter | `results/qwen_0p5b_lora_lr5e5_dropout005_seed36` |
+
 
 ## Dataset Split
 
@@ -72,6 +77,7 @@ Custom split used for this PoC:
 
 The heldout set was not used during training.
 
+
 ## Evaluation Method
 
 The model was evaluated using next-token multiple-choice scoring.
@@ -86,6 +92,7 @@ For each prompt, the model scored only the logits for the next answer token:
 | D | 422 |
 
 The predicted answer was the highest-logit choice among A, B, C, and D. This was chosen over free-form generation because it is deterministic, fast, and avoids parsing generated explanations.
+
 
 ## Final Results Overview
 
