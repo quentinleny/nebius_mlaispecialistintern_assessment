@@ -18,6 +18,7 @@ Benchmark setup:
 | Heldout examples | 56 |
 | GPU | NVIDIA H200 |
 
+
 ## Throughput Sweep
 
 | Batch size | Examples/sec | Runtime | Max GPU allocated | Max GPU reserved |
@@ -31,6 +32,7 @@ Benchmark setup:
 | 48 | 689.50 | 1.62 s | 4.609 GB | 9.928 GB |
 | 56 | 843.19 | 1.33 s | 5.209 GB | 17.973 GB |
 
+
 ## Optimized Setting
 
 The best clean batch size was 56 because the heldout set contains exactly 56 examples.
@@ -43,6 +45,7 @@ The best clean batch size was 56 because the heldout set contains exactly 56 exa
 | Max GPU memory allocated | 5.209 GB |
 | Max GPU memory reserved | 17.973 GB |
 
+
 ## Throughput Improvement
 
 | Metric | Value |
@@ -52,6 +55,7 @@ The best clean batch size was 56 because the heldout set contains exactly 56 exa
 | Speedup | 33.73x |
 
 Batching improved inference throughput by 33.73x while keeping memory usage well within H200 capacity.
+
 
 ## Final Results Summary
 
@@ -69,6 +73,7 @@ Batching improved inference throughput by 33.73x while keeping memory usage well
 | Optimized inference throughput | 843.19 examples/sec |
 | Inference throughput speedup | 33.73x |
 
+
 ## Caveats
 
 | Caveat | Impact |
@@ -79,6 +84,7 @@ Batching improved inference throughput by 33.73x while keeping memory usage well
 | 16 epochs lowered train loss but hurt heldout accuracy | Evidence of overfitting |
 | Batch sizes above 56 process the full heldout set in one batch | Treated only as saturation checks |
 | Final adapter selected by heldout accuracy | Not by lowest training loss |
+
 
 ## Demo Talking Points
 
