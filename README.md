@@ -33,11 +33,3 @@ Then review:
 3. `results/markdown/03_throughput_and_caveats.md`
 
 The Slurm jobs should be run from the repository root.
-
-EOF
-
-git add README.md
-
-git commit -m "Add top-level README"
-
-git push
