@@ -87,7 +87,7 @@ Batching improved inference throughput by 33.73x while keeping memory usage well
 | Final adapter selected by heldout accuracy | Not by lowest training loss |
 
 
-## Demo Talking Points
+## Summarizing Points
 
 - The cluster was validated before model work through GPU visibility, container launch, PyTorch CUDA, and NCCL all-reduce checks.
 - The model was fine-tuned with LoRA to reduce memory and compute cost while still adapting task behavior.

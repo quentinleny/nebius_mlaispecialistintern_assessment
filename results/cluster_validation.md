@@ -42,9 +42,6 @@ Result:
 - No GPU processes were running before workload launch
 
 
-Status: PASSED
-
-
 
 ## Test 2: Containerized PyTorch CUDA Validation
 
@@ -58,9 +55,6 @@ Result:
 - PyTorch CUDA available: True
 - Container CUDA version: 12.6
 - Each node saw 2 NVIDIA H200 GPUs from inside the container
-
-
-Status: PASSED
 
 
 
@@ -103,9 +97,6 @@ Slurm accounting:
 
 JobID      JobName     State      Elapsed   ExitCode
 223        nccl_check  COMPLETED  00:00:34  0:0
-
-
-Status: PASSED
 
 
 
